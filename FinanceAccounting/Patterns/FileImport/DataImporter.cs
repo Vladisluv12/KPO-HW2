@@ -1,6 +1,6 @@
 ﻿using KPO_DZ2.Domain.Model;
 
-namespace KPO_DZ2.Patterns.TemplateMethod;
+namespace KPO_DZ2.Patterns.FileImport;
 
 public abstract class DataImporter
 {

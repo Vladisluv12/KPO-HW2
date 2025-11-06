@@ -3,7 +3,7 @@ using KPO_DZ2.Domain.Services;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace KPO_DZ2.Patterns.TemplateMethod;
+namespace KPO_DZ2.Patterns.FileImport;
 
 public class YamlImporter(
     IBankAccFacade accountFacade,

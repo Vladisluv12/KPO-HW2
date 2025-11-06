@@ -2,7 +2,7 @@
 using KPO_DZ2.Domain.Model;
 using KPO_DZ2.Domain.Services;
 
-namespace KPO_DZ2.Patterns.TemplateMethod;
+namespace KPO_DZ2.Patterns.FileImport;
 
 
 public class CsvImporter(IBankAccFacade accountFacade, ICategoryFacade categoryFacade, IOperationFacade operationFacade)

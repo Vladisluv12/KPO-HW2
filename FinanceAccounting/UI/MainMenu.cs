@@ -1,5 +1,4 @@
-﻿using KPO_DZ2.Domain.Model;
-using KPO_DZ2.Domain.Services;
+﻿using KPO_DZ2.Domain.Services;
 
 namespace KPO_DZ2.UI;
 
