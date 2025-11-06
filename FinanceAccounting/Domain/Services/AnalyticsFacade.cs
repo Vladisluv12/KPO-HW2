@@ -4,7 +4,6 @@ using KPO_DZ2.Domain.Repositories;
 namespace KPO_DZ2.Domain.Services;
 
 public class AnalyticsFacade(
-    Guid bankAccId, 
     IOperationRepository operationRepository, 
     ICategoryRepository categoryRepository) : IAnalyticsFacade
 {
@@ -12,7 +11,6 @@ public class AnalyticsFacade(
     {
         var operations = operationRepository
             .GetByPeriod(startDate, endDate)
-            .Where(o => o.BankAccountId == bankAccId)
             .ToList();
         var income = operations
             .Where(o => o.Type == CategoryType.Income)
@@ -26,8 +24,7 @@ public class AnalyticsFacade(
     public Dictionary<string, double> GroupOperationsByCategory(DateTime startDate, DateTime endDate)
     {
         var operations = operationRepository
-            .GetByPeriod(startDate, endDate)
-            .Where(o => o.BankAccountId == bankAccId);
+            .GetByPeriod(startDate, endDate);
         var categories = categoryRepository
             .GetAll()
             .ToDictionary(c => c.Id, c => c.Name);
@@ -44,7 +41,6 @@ public class AnalyticsFacade(
     {
         var operations = operationRepository
             .GetByPeriod(startDate, endDate)
-            .Where(o => o.BankAccountId == bankAccId)
             .ToList();
         
         return new Summary

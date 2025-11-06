@@ -30,12 +30,12 @@ public static class DiContainer
         services.AddSingleton<IAnalyticsFacade, AnalyticsFacade>();
 
         // Register cached repositories (proxy)
-        services.AddSingleton<IRepository<BankAccount>>(provider =>
+        /*services.AddSingleton<IRepository<BankAccount>>(provider =>
             new CachedRepository<BankAccount, IBankAccRepository>(provider.GetRequiredService<IBankAccRepository>()));
         services.AddSingleton<ICategoryRepository>(provider =>
             new CachedCategoryRepository(provider.GetRequiredService<CategoryRepository>()));
         services.AddSingleton<IOperationRepository>(provider =>
-            new CachedOperationRepository(provider.GetRequiredService<OperationRepository>()));
+            new CachedOperationRepository(provider.GetRequiredService<OperationRepository>()));*/
 
         return services.BuildServiceProvider();
     }

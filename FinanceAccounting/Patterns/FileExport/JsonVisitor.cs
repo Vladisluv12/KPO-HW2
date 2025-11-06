@@ -26,6 +26,6 @@ public class JsonVisitor : IVisitor
         if (file is not JsonFile)
             throw new ArgumentException("File is not json file");
         System.IO.File.WriteAllText(
-            AppDomain.CurrentDomain.BaseDirectory + "/exported" + file.Name, file.Content);
+            AppDomain.CurrentDomain.BaseDirectory + "/exported/" + file.Name, file.Content);
     }
 }
