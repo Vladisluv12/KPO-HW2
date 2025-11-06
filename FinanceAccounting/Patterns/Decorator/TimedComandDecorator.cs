@@ -16,15 +16,3 @@ public class TimedCommandDecorator<T>(ICommand<T> decoratedCommand) : ICommand<T
         return result;
     }
 }
-
-public class TimedCommandDecorator(ICommand decoratedCommand) : ICommand
-{
-    public void Execute()
-    {
-        var stopwatch = Stopwatch.StartNew();
-        decoratedCommand.Execute();
-        stopwatch.Stop();
-        
-        Console.WriteLine($"Command executed in {stopwatch.ElapsedMilliseconds} ms");
-    }
-}
